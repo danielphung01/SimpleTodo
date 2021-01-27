@@ -104,13 +104,22 @@ public class MainActivity extends AppCompatActivity {
             // extract the original position of the edited item from the position key
             int position = data.getExtras().getInt(KEY_ITEM_POSITION);
 
-            // update the model at the right position with new item text
-            items.set(position, itemText);
-            // notify the adapter
-            itemsAdapter.notifyItemChanged(position);
-            // persist the changes
-            saveItems();
-            Toast.makeText(getApplicationContext(), "Item updated successfully", Toast.LENGTH_SHORT).show();
+            if (itemText.length() == 0) {
+                // Remove item if item is changed to nothing
+                items.remove(position);
+                itemsAdapter.notifyItemRemoved(position);
+                Toast.makeText(getApplicationContext(), "Item was removed", Toast.LENGTH_SHORT).show();
+                saveItems();
+            } else {
+                // update the model at the right position with new item text
+                items.set(position, itemText);
+                // notify the adapter
+                itemsAdapter.notifyItemChanged(position);
+                // persist the changes
+                saveItems();
+                Toast.makeText(getApplicationContext(), "Item updated successfully", Toast.LENGTH_SHORT).show();
+            }
+
         } else {
             Log.w("MainActivity", "Unknown call to onActivityResult");
         }
