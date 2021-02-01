@@ -8,7 +8,7 @@ This readme was based off of CodePath's [template](https://courses.codepath.org/
 
 This project was created following CodePath's [tutorial](https://www.youtube.com/playlist?list=PLrT2tZ9JRrf6cHOlMkbmTMFt0RzpJiRGX).
 
-Time spent: **4** hours spent in total
+Time spent: **7** hours spent in total
 
 ## User Stories
 
@@ -25,6 +25,7 @@ The following **optional** features are implemented:
 The following **additional** features are implemented:
 
 * [x] User can delete item by leaving edit space blank
+* [x] User can change the title of the list
 
 ## Video Walkthrough
 
