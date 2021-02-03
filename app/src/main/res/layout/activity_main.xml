@@ -14,10 +14,11 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:clickable="true"
-        android:hint="Enter list name"
-        android:text="List 1"
+        android:hint="@string/list_name_hint"
+        android:text="@string/list_name"
         android:textColor="#F8000000"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:focusable="true" />
 
     <Button
         android:id="@+id/btnAdd"
@@ -27,7 +28,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="0dp"
         android:layout_marginBottom="0dp"
-        android:text="Add" />
+        android:text="@string/add_btn_text" />
 
     <EditText
         android:id="@+id/etItem"
@@ -40,8 +41,11 @@
         android:layout_marginEnd="0dp"
         android:layout_marginBottom="0dp"
         android:layout_toStartOf="@+id/btnAdd"
+        android:autofillHints="text"
         android:ems="10"
-        android:hint="Add an item here" />
+        android:hint="@string/edit_hint"
+        android:inputType="text"
+        android:textColorHint="#FFFFFF" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvItems"
