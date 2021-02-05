@@ -45,7 +45,7 @@
         android:ems="10"
         android:hint="@string/edit_hint"
         android:inputType="text"
-        android:textColorHint="#FFFFFF" />
+        android:textColorHint="#99000000" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvItems"

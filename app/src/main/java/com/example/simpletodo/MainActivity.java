@@ -92,14 +92,20 @@ public class MainActivity extends AppCompatActivity {
 
         btnAdd.setOnClickListener(v -> {
             String todoItem = etItem.getText().toString();
-            // Add it to the model
-            items.add(todoItem);
-            saveList.add(todoItem);
-            // Notify adapter that an item is inserted
-            itemsAdapter.notifyItemInserted(items.size() - 1);
-            etItem.setText("");
-            Toast.makeText(getApplicationContext(), "Item was added", Toast.LENGTH_SHORT).show();
-            saveItems();
+            if (todoItem.length() < 1) {
+                Log.d("MainActivity", "empty object");
+                etItem.setText("");
+                Toast.makeText(getApplicationContext(), "Can't add an item with no text!", Toast.LENGTH_SHORT).show();
+            } else {
+                // Add it to the model
+                items.add(todoItem);
+                saveList.add(todoItem);
+                // Notify adapter that an item is inserted
+                itemsAdapter.notifyItemInserted(items.size() - 1);
+                etItem.setText("");
+                Toast.makeText(getApplicationContext(), "Item was added", Toast.LENGTH_SHORT).show();
+                saveItems();
+            }
         });
     }
 
